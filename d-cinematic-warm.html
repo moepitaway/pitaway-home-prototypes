@@ -578,6 +578,36 @@
     .fr__name { font-size:19px; }
     .fr__desc { font-size:12.5px; }
   }
+  /* compact: three items side by side so the menu is close */
+  @media (min-width:701px){
+    .nwk { padding:64px 0 56px; }
+    .nwk__head { padding-bottom:20px; margin-bottom:30px; }
+    .nwk__frames { display:grid; grid-template-columns:repeat(3,1fr); gap:30px; }
+    .fr, .fr:nth-child(even) { display:flex; flex-direction:column; gap:0; padding:0; border:0; }
+    .fr:nth-child(even) .fr__media { order:0; }
+    .fr__media { height:220px; margin-bottom:18px; }
+    .fr__img, .fr--soup .fr__img { width:auto; max-width:100%; max-height:210px; }
+    .fr__name { font-size:clamp(24px,2.3vw,32px); margin-bottom:10px; }
+    .fr__desc { font-size:15px; margin-bottom:16px; }
+    .fr__meta { margin:-4px 0 16px; }
+    .nwk__also { margin-top:30px; padding-top:20px; border-top:1px solid rgba(29,26,22,.14); }
+    .dlk__in { padding:56px 28px; }
+    .dlk__media { min-height:0; }
+    .dlk__media img { width:min(100%,400px); }
+  }
+  @media (max-width:700px){
+    .nwk { padding:44px 0 36px; }
+    .nwk__head { padding-bottom:14px; }
+    .fr, .fr:nth-child(even) { padding:14px 0; }
+    .fr__media { height:120px; }
+    .fr__desc { margin-bottom:8px; }
+    .dlk__in { padding:40px 16px 44px; }
+    .dlk__media img { width:56%; }
+    .dlk__media { margin-bottom:0; }
+    .dlk__name { font-size:46px; }
+    .dlk__plus { margin-bottom:20px; }
+  }
+
 </style>
 
 <section class="nwk" aria-label="New at Pita Way">
