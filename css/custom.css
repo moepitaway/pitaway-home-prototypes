@@ -1,0 +1,932 @@
+/* 
+ * custom.css - Contains all custom overrides and specific mobile fixes
+ * Optimized for Pita Way website
+ */
+
+/*------------------------------------------------------------------
+    FIND A PITA WAY BUTTON RESPONSIVE CONTROLS
+-------------------------------------------------------------------*/
+/* Show "FIND A PITA WAY" button up to 1300px */
+@media screen and (max-width: 1300px) {
+  .find-location-btn {
+    display: flex !important;
+  }
+}
+
+/* Hide "FIND A PITA WAY" button on larger screens */
+@media screen and (min-width: 1301px) {
+  .find-location-btn {
+    display: none !important;
+  }
+}
+
+/* Apply consistent styling to the "FIND A PITA WAY" text across all screen sizes */
+.find-location-btn .find-text,
+.find-location-btn .pita-text {
+  font-size: 16px !important;
+  font-weight: 600 !important;
+  line-height: 1.1 !important;
+}
+
+/*------------------------------------------------------------------
+    MOBILE NAVIGATION LAYOUT FIXES
+-------------------------------------------------------------------*/
+/* Make sure hamburger is always to the right of Find a Pita Way button */
+@media screen and (max-width: 1400px) {
+  /* Container to properly position elements */
+  .top-navbar .navbar > .container {
+    display: flex !important;
+    align-items: center !important;
+    padding: 0 10px !important;
+    flex-wrap: nowrap !important;
+  }
+  
+  /* Logo positioning */
+  .top-navbar .navbar-brand {
+    order: 1 !important;
+    flex: 0 0 auto !important;
+    padding-left: 10px !important;
+    margin-right: 0 !important;
+  }
+  
+  /* Create a wrapper for the Find a Pita Way button and hamburger */
+  .mobile-nav-controls {
+    order: 2 !important;
+    margin-left: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+  }
+  
+  /* Find a Pita Way button */
+  .find-location-btn {
+    order: 1 !important;
+    margin-right: 15px !important;
+    margin-left: 0 !important;
+  }
+  
+  /* Hamburger menu always on the right */
+  .navbar-light .navbar-toggler {
+    order: 2 !important;
+    margin-left: 0 !important;
+    margin-right: 5px !important;
+  }
+}
+
+/* Additional fixes for smaller screens */
+@media screen and (max-width: 767px) {
+  /* Logo size */
+  .top-navbar .navbar-brand img {
+    max-height: 75px !important;
+  }
+  
+  /* Find a Pita Way button spacing */
+  .find-location-btn .nav-link {
+    padding: 4px 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    white-space: nowrap !important;
+  }
+
+  /* Force proper wrapping on small screens */
+  .mobile-nav-controls {
+    justify-content: flex-end !important;
+  }
+}
+
+/*------------------------------------------------------------------
+    MOBILE SIZE-SPECIFIC ADJUSTMENTS
+-------------------------------------------------------------------*/
+/* Medium small screens */
+@media screen and (max-width: 480px) {
+  .top-navbar .navbar-brand img {
+    max-height: 60px !important;
+  }
+  
+  .find-location-btn img {
+    width: 22px !important;
+    margin-right: 5px !important;
+  }
+  
+  .find-location-btn .find-text,
+  .find-location-btn .pita-text {
+    font-size: 15px !important;
+  }
+  
+  .navbar-light .navbar-toggler {
+    padding: 6px !important;
+  }
+  
+  .navbar-light .navbar-toggler-icon,
+  .navbar-light .navbar-toggler-icon:before,
+  .navbar-light .navbar-toggler-icon:after {
+    width: 22px !important;
+    height: 2px !important;
+  }
+}
+
+/* Very small screens */
+@media screen and (max-width: 375px) {
+  .top-navbar .navbar-brand img {
+    max-height: 50px !important;
+  }
+  
+  .find-location-btn img {
+    width: 20px !important;
+    margin-right: 3px !important;
+  }
+  
+  .find-location-btn .find-text,
+  .find-location-btn .pita-text {
+    font-size: 13px !important;
+  }
+  
+  .navbar-light .navbar-toggler {
+    padding: 5px !important;
+    min-width: 35px !important;
+  }
+  
+  .navbar-light .navbar-toggler-icon,
+  .navbar-light .navbar-toggler-icon:before,
+  .navbar-light .navbar-toggler-icon:after {
+    width: 20px !important;
+    height: 2px !important;
+  }
+  
+  .navbar-light .navbar-toggler-icon:before {
+    top: -6px !important;
+  }
+  
+  .navbar-light .navbar-toggler-icon:after {
+    bottom: -6px !important;
+  }
+}
+
+/* Extremely small screens */
+@media screen and (max-width: 320px) {
+  .top-navbar .navbar-brand img {
+    max-height: 42px !important;
+  }
+  
+  .find-location-btn .find-text,
+  .find-location-btn .pita-text {
+    font-size: 11px !important;
+    letter-spacing: -0.3px !important;
+  }
+  
+  .find-location-btn img {
+    width: 18px !important;
+    margin-right: 2px !important;
+  }
+  
+  .navbar-light .navbar-toggler {
+    padding: 4px !important;
+    min-width: 30px !important;
+  }
+}
+
+/*------------------------------------------------------------------
+    HAMBURGER ICON & SIDEBAR MENU
+-------------------------------------------------------------------*/
+/* Enhanced hamburger to X transition */
+.navbar-light .navbar-toggler {
+  border: none !important;
+  padding: 10px !important;
+  z-index: 1001 !important;
+  background: transparent !important;
+}
+
+.navbar-light .navbar-toggler:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: none !important;
+  position: relative !important;
+}
+
+.navbar-light .navbar-toggler-icon,
+.navbar-light .navbar-toggler-icon:before,
+.navbar-light .navbar-toggler-icon:after {
+  width: 30px !important;
+  height: 3px !important;
+  background-color: var(--pita-red) !important;
+  display: block !important;
+  transition: all 0.3s ease !important;
+}
+
+.navbar-light .navbar-toggler-icon:before,
+.navbar-light .navbar-toggler-icon:after {
+  content: '' !important;
+  position: absolute !important;
+  left: 0 !important;
+}
+
+.navbar-light .navbar-toggler-icon:before {
+  top: -8px !important;
+}
+
+.navbar-light .navbar-toggler-icon:after {
+  bottom: -8px !important;
+}
+
+.navbar-light .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  background-color: transparent !important;
+}
+
+.navbar-light .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  top: 0 !important;
+  transform: rotate(45deg) !important;
+  background-color: var(--pita-yellow) !important;
+}
+
+.navbar-light .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  bottom: 0 !important;
+  transform: rotate(-45deg) !important;
+  background-color: var(--pita-yellow) !important;
+}
+
+/* Side Menu Implementation */
+.side-menu {
+  position: fixed !important;
+  top: 0 !important;
+  right: -100% !important;
+  width: 100% !important;
+  height: 100vh !important;
+  background-color: var(--pita-white) !important;
+  z-index: 1000 !important;
+  transition: all 0.4s ease !important;
+  overflow-y: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  padding: 60px 0 220px !important;
+}
+
+.side-menu.open {
+  right: 0 !important;
+}
+
+/* Side menu container */
+.side-menu .container {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 20px !important;
+}
+
+/* Side menu navigation */
+.side-menu .navbar-nav {
+  width: 100% !important;
+  text-align: center !important;
+  padding: 0 !important;
+  margin: 10px 0 15px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.side-menu .nav-item {
+  width: 100% !important;
+  max-width: 500px !important;
+  margin: 0 auto !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05) !important;
+  padding-bottom: 8px !important;
+}
+
+.side-menu .nav-link {
+  padding: 12px !important;
+  display: block !important;
+  transition: all 0.3s ease !important;
+}
+
+/* Side menu overlay */
+.side-menu-overlay {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  z-index: 999 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transition: all 0.3s ease !important;
+}
+
+.side-menu-overlay.active {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Close button */
+.side-menu-close {
+  position: absolute !important;
+  top: 20px !important;
+  right: 20px !important;
+  width: 40px !important;
+  height: 40px !important;
+  background: transparent !important;
+  border: none !important;
+  cursor: pointer !important;
+  z-index: 1002 !important;
+}
+
+.side-menu-close:before,
+.side-menu-close:after {
+  content: '' !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 10% !important;
+  width: 80% !important;
+  height: 3px !important;
+  background-color: var(--pita-yellow) !important;
+}
+
+.side-menu-close:before {
+  transform: rotate(45deg) !important;
+}
+
+.side-menu-close:after {
+  transform: rotate(-45deg) !important;
+}
+
+/*------------------------------------------------------------------
+    DEVICE-SPECIFIC FIXES
+-------------------------------------------------------------------*/
+/* iPhone Notch Handling */
+@supports (padding-top: env(safe-area-inset-top)) {
+  .top-navbar .navbar {
+    padding-top: max(20px, env(safe-area-inset-top)) !important;
+  }
+
+  .side-menu {
+    padding-top: max(80px, calc(env(safe-area-inset-top) + 60px)) !important;
+    padding-bottom: max(240px, calc(env(safe-area-inset-bottom) + 200px)) !important;
+  }
+
+  .side-menu-close {
+    top: max(20px, calc(env(safe-area-inset-top) + 10px)) !important;
+  }
+}
+
+/* iOS Specific Fixes */
+@supports (-webkit-touch-callout: none) {
+  .video-header {
+    height: -webkit-fill-available !important;
+  }
+  
+  .side-menu {
+    height: -webkit-fill-available !important;
+  }
+  
+  .stuff-box {
+    background-attachment: scroll !important;
+  }
+}
+
+/* Remove back to top button as requested */
+#back-to-top {
+  display: none !important;
+}
+
+
+@media screen and (min-width: 480px) and (max-width: 1300px) {
+  .find-location-btn img {
+    width: 30px !important;
+    margin-right: 3px !important;
+  }
+}
+
+/*------------------------------------------------------------------
+    IMPROVED MOBILE SIDEBAR MENU - DYNAMIC & EFFICIENT
+-------------------------------------------------------------------*/
+/* Base sidebar improvements for all mobile devices */
+@media screen and (max-width: 1400px) {
+  .side-menu {
+    padding: 80px 20px 240px !important;
+    justify-content: flex-start !important;
+  }
+
+  .side-menu .navbar-nav {
+    width: 100% !important;
+    max-width: 450px !important;
+    gap: 0 !important;
+    margin: 0 auto !important;
+  }
+
+  .side-menu .nav-item {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-bottom: 1px solid rgba(207, 24, 24, 0.1) !important;
+  }
+
+  .side-menu .nav-item:last-of-type {
+    border-bottom: none !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 18px 24px !important;
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    color: #000000 !important;
+    text-align: left !important;
+    border-radius: 0 !important;
+    transition: all 0.2s ease !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .side-menu .nav-link:hover {
+    background-color: rgba(207, 24, 24, 0.08) !important;
+    color: var(--pita-red) !important;
+    transform: translateX(8px) !important;
+    padding-left: 32px !important;
+  }
+
+  .side-menu .nav-item.active .nav-link {
+    background-color: rgba(207, 24, 24, 0.1) !important;
+    color: var(--pita-red) !important;
+    border-left: 4px solid var(--pita-red) !important;
+  }
+
+  /* Order Now button in sidebar - top position */
+  .order-now-btn-top {
+    width: 90% !important;
+    max-width: 450px !important;
+    margin: 35px auto 30px !important;
+    padding: 18px 28px !important;
+    background-color: var(--pita-black) !important;
+    border-radius: 50px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+  }
+
+  .order-now-btn-top:hover {
+    background-color: var(--pita-yellow) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25) !important;
+  }
+
+  .order-now-btn-top .nav-link {
+    padding: 0 !important;
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    color: white !important;
+    letter-spacing: 1px !important;
+  }
+
+  .order-now-btn-top:hover .nav-link {
+    color: var(--pita-red) !important;
+  }
+
+  .order-now-btn-top img {
+    width: 28px !important;
+    margin-right: 12px !important;
+  }
+
+  /* Hide the duplicate Order Now at bottom */
+  .side-menu .order-now-btn {
+    display: none !important;
+  }
+}
+
+/* Tablet (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .side-menu {
+    padding: 90px 30px 240px !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 20px 28px !important;
+    font-size: 18px !important;
+  }
+}
+
+/* Large phones (415px - 767px) */
+@media screen and (max-width: 767px) {
+  .side-menu {
+    padding: 70px 15px 230px !important;
+  }
+
+  .side-menu .navbar-nav {
+    max-width: 100% !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 16px 20px !important;
+    font-size: 16px !important;
+  }
+
+  .order-now-btn-top {
+    padding: 16px 24px !important;
+    margin: 30px auto 25px !important;
+  }
+
+  .order-now-btn-top .nav-link {
+    font-size: 17px !important;
+  }
+}
+
+/* Standard phones (376px - 414px) */
+@media screen and (max-width: 414px) {
+  .side-menu {
+    padding: 65px 15px 230px !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 15px 18px !important;
+    font-size: 15px !important;
+  }
+
+  .order-now-btn-top {
+    padding: 15px 22px !important;
+    margin: 28px auto 20px !important;
+  }
+
+  .order-now-btn-top .nav-link {
+    font-size: 16px !important;
+  }
+
+  .order-now-btn-top img {
+    width: 26px !important;
+    margin-right: 10px !important;
+  }
+}
+
+/* Small phones (up to 375px) */
+@media screen and (max-width: 375px) {
+  .side-menu {
+    padding: 60px 12px 220px !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 14px 16px !important;
+    font-size: 14.5px !important;
+  }
+
+  .order-now-btn-top {
+    padding: 14px 20px !important;
+    margin: 25px auto 18px !important;
+  }
+
+  .order-now-btn-top .nav-link {
+    font-size: 15px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  .order-now-btn-top img {
+    width: 24px !important;
+    margin-right: 8px !important;
+  }
+}
+
+/* Very small phones (up to 320px) */
+@media screen and (max-width: 320px) {
+  .side-menu {
+    padding: 55px 10px 210px !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 13px 14px !important;
+    font-size: 14px !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  .order-now-btn-top {
+    padding: 13px 18px !important;
+    margin: 22px auto 15px !important;
+  }
+
+  .order-now-btn-top .nav-link {
+    font-size: 14px !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  .order-now-btn-top img {
+    width: 22px !important;
+    margin-right: 6px !important;
+  }
+}
+
+/*------------------------------------------------------------------
+    FEEDING FAMILIES BADGE - "NEW" Label
+-------------------------------------------------------------------*/
+/* Desktop navigation badge */
+@media screen and (min-width: 1401px) {
+  .top-navbar .navbar-nav .nav-item a[href="/feeding-families"] {
+    position: relative;
+  }
+
+  .top-navbar .navbar-nav .nav-item a[href="/feeding-families"]:after {
+    content: "NEW";
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--pita-red);
+    color: white;
+    font-size: 8px;
+    font-weight: 700;
+    padding: 2px 5px;
+    border-radius: 2px;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+}
+
+/* Mobile side menu badge */
+@media screen and (max-width: 1400px) {
+  .side-menu .nav-item a[href="/feeding-families"] {
+    position: relative;
+  }
+
+  .side-menu .nav-item a[href="/feeding-families"]:after {
+    content: "NEW";
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    transform: translateY(-50%);
+    background: var(--pita-red);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 3px 6px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+  }
+}
+
+/*------------------------------------------------------------------
+    HEIGHT-RESPONSIVE SIDE MENU FIXES
+    Ensures menu doesn't cut off on smaller screen heights
+-------------------------------------------------------------------*/
+/* Very tall screens - comfortable spacing */
+@media screen and (min-height: 901px) and (max-width: 1400px) {
+  .side-menu {
+    padding: 80px 20px 240px !important;
+  }
+
+  .order-now-btn-top {
+    margin: 35px auto 30px !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 18px 24px !important;
+  }
+}
+
+/* Standard height screens (701px - 900px) */
+@media screen and (min-height: 701px) and (max-height: 900px) and (max-width: 1400px) {
+  .side-menu {
+    padding: 70px 20px 180px !important;
+  }
+
+  .order-now-btn-top {
+    margin: 28px auto 25px !important;
+    padding: 16px 24px !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 16px 22px !important;
+  }
+}
+
+/* Medium height screens (601px - 700px) */
+@media screen and (min-height: 601px) and (max-height: 700px) and (max-width: 1400px) {
+  .side-menu {
+    padding: 60px 20px 140px !important;
+  }
+
+  .order-now-btn-top {
+    margin: 22px auto 20px !important;
+    padding: 14px 22px !important;
+  }
+
+  .order-now-btn-top .nav-link {
+    font-size: 16px !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 14px 20px !important;
+  }
+}
+
+/* Compact height screens (501px - 600px) */
+@media screen and (min-height: 501px) and (max-height: 600px) and (max-width: 1400px) {
+  .side-menu {
+    padding: 55px 15px 100px !important;
+  }
+
+  .order-now-btn-top {
+    margin: 18px auto 18px !important;
+    padding: 12px 20px !important;
+  }
+
+  .order-now-btn-top .nav-link {
+    font-size: 15px !important;
+  }
+
+  .order-now-btn-top img {
+    width: 24px !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 12px 18px !important;
+    font-size: 15px !important;
+  }
+
+  .side-menu .nav-item {
+    padding-bottom: 6px !important;
+  }
+}
+
+/* Very compact height screens (401px - 500px) */
+@media screen and (min-height: 401px) and (max-height: 500px) and (max-width: 1400px) {
+  .side-menu {
+    padding: 50px 15px 80px !important;
+  }
+
+  .order-now-btn-top {
+    margin: 15px auto 15px !important;
+    padding: 11px 18px !important;
+  }
+
+  .order-now-btn-top .nav-link {
+    font-size: 14px !important;
+  }
+
+  .order-now-btn-top img {
+    width: 22px !important;
+    margin-right: 8px !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+  }
+
+  .side-menu .nav-item {
+    padding-bottom: 4px !important;
+  }
+}
+
+/* Extremely compact height screens (up to 400px) - landscape phones */
+@media screen and (max-height: 400px) and (max-width: 1400px) {
+  .side-menu {
+    padding: 45px 12px 60px !important;
+  }
+
+  .order-now-btn-top {
+    margin: 12px auto 12px !important;
+    padding: 10px 16px !important;
+  }
+
+  .order-now-btn-top .nav-link {
+    font-size: 13px !important;
+    letter-spacing: 0.3px !important;
+  }
+
+  .order-now-btn-top img {
+    width: 20px !important;
+    margin-right: 6px !important;
+  }
+
+  .side-menu .nav-link {
+    padding: 9px 14px !important;
+    font-size: 13px !important;
+  }
+
+  .side-menu .nav-item {
+    padding-bottom: 3px !important;
+  }
+
+  /* Ensure close button is visible */
+  .side-menu-close {
+    top: 10px !important;
+    right: 10px !important;
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
+
+/* ============================================================
+   === Brand Fonts ===
+   Site-wide brand typography (added 2026-04-26).
+   Semringah  → display script (hero h1, lead/descriptive copy)
+   Code Bold  → primary bold headings, card titles, eyebrows, buttons, nav
+   Arial Black → heaviest impact accents (red callout bands, SAVE MORE)
+   Revert: see BRAND-FONTS-REVERT.md (delete this entire block).
+   ============================================================ */
+@font-face {
+  font-family: 'Semringah';
+  src: url('../fonts/Semringah.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Code Bold';
+  src: url('../fonts/cbold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Semringah: big display headings (hero h1s across all pages + section titles) */
+.video-overlay h1,
+.about-content h1,
+.pw-catering-content h1,
+.careers-content h1,
+.contact-content h1,
+.giftcard-content h1,
+.specials-content h1,
+.privacy-header h1 {
+  font-family: 'Semringah', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+  letter-spacing: 0.04em;
+}
+.protein-promo-title,
+.loc-hero__title,
+.loc-menu-callout h2,
+.heading-title h2,
+.gsb-feature__title,
+.catering-banner-text h3,
+.about-section-box h1,
+.kids-banner-content h2,
+.qt-box .lead strong,
+.qt-box .highlight,
+.loc-about h2,
+.loc-hours h2,
+.loc-section-head h2,
+.loc-reviews h2,
+.loc-nearby__title {
+  font-family: 'Semringah', 'Rubik', sans-serif;
+  letter-spacing: 0.04em;
+}
+
+/* Rubik for descriptive/lead copy — more legible than the script font */
+.protein-promo-sub,
+.sauce-drop-sub,
+.gsb-feature__lead,
+.catering-banner-text p,
+.our-team .team-content .post,
+.loc-hero__sub,
+.loc-about__lead,
+.loc-section-head__lead,
+.loc-desc,
+.about-section-box p,
+.qt-box p {
+  font-family: 'Rubik', sans-serif;
+  letter-spacing: normal;
+}
+
+/* Code Bold: smaller card/eyebrow/button/nav labels */
+.our-team .team-content .title,
+.gsb-feature__eyebrow,
+.catering-banner-btn,
+.about-section-box h4,
+.kids-banner-tagline,
+.menu-order-btn,
+.btn-outline-new-white,
+.btn-outline-red,
+.footer-order-btn,
+.footer-nav a,
+.order-now-btn .nav-link,
+.find-location-btn .pita-text,
+.find-location-btn .find-text,
+.navbar-nav .nav-link,
+.loc-hero__eyebrow,
+.loc-about__eyebrow,
+.loc-eyebrow,
+.loc-menu-callout__eyebrow,
+.loc-highlight h3,
+.loc-blog__card h3,
+.loc-blog__tag,
+.loc-light-ctas__card h3,
+.loc-nearby__card h3,
+.loc-review__author {
+  font-family: 'Code Bold', 'Rubik', Impact, "Arial Black", sans-serif;
+  font-weight: bold;
+}
+
+/* ===== Nav logo (trimmed badge) — bigger on EVERY screen + slim white bar (2026-06-24b) ===== */
+.top-navbar .navbar { padding-top: 4px !important; padding-bottom: 4px !important; }
+.top-navbar .navbar-brand img { max-height: 92px; width: auto; }
+@media screen and (min-width: 1401px)                          { .top-navbar .navbar-brand img { max-height: 100px; } }
+@media screen and (min-width: 1301px) and (max-width: 1400px)  { .top-navbar .navbar-brand img { max-height: 95px; } }
+@media screen and (min-width: 1201px) and (max-width: 1300px)  { .top-navbar .navbar-brand img { max-height: 90px; } }
+@media screen and (min-width: 992px)  and (max-width: 1200px)  { .top-navbar .navbar-brand img { max-height: 85px; } }
+@media screen and (min-width: 768px)  and (max-width: 991px)   { .top-navbar .navbar-brand img { max-height: 80px; } }
+@media screen and (max-width: 767px)  { .top-navbar .navbar-brand img { max-height: 74px !important; } }
+@media screen and (max-width: 480px)  { .top-navbar .navbar-brand img { max-height: 66px !important; } }
+@media screen and (max-width: 375px)  { .top-navbar .navbar-brand img { max-height: 58px !important; } }
+@media screen and (max-width: 320px)  { .top-navbar .navbar-brand img { max-height: 52px !important; } }
+

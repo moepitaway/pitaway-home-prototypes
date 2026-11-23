@@ -1,0 +1,1085 @@
+/*------------------------------------------------------------------
+    RESPONSIVE STYLES
+-------------------------------------------------------------------*/
+
+/*------------------------------------------------------------------
+    DESKTOP STYLES (1401px and up)
+-------------------------------------------------------------------*/
+
+@media screen and (min-width: 1401px) {
+	/* Desktop nav item spacing - reduced to fit additional tab */
+	.top-navbar .navbar-light .navbar-nav .nav-item {
+	  margin: 0 1px;
+	}
+
+
+	.top-navbar .navbar-light .navbar-nav .nav-link {
+	  padding: 9px 10px;
+	  white-space: nowrap;
+	  font-size: 15px;
+	}
+
+	/* Active navigation item - red color for desktop */
+	.top-navbar .navbar-light .navbar-nav .nav-item.active .nav-link,
+	.top-navbar .navbar-light .navbar-nav .nav-item.active > .nav-link,
+	.top-navbar .navbar-light .navbar-nav .nav-link.active,
+	.top-navbar .navbar .navbar-nav .nav-item.active .nav-link,
+	.top-navbar .navbar .navbar-nav .nav-link.active {
+	  color: var(--pita-red) !important;
+	  font-weight: 600 !important;
+	}
+
+	/* Shift entire navbar to the left on desktop */
+	.top-navbar .navbar > .container {
+	  transform: translateX(-20px);
+	}
+
+	/* Prevent horizontal scroll on desktop */
+	.top-navbar .navbar-collapse {
+	  flex-wrap: nowrap;
+	  justify-content: flex-end;
+	}
+
+	/* Hide side menu elements on desktop */
+	.side-menu, .side-menu-overlay {
+	  display: none;
+	}
+	
+	/* Adjust stuff-box container width for large screens */
+	.stuff-box .container {
+	  max-width: 95%;
+	  width: 95%;
+	}
+  }
+  
+  /*------------------------------------------------------------------
+	  TABLET TO DESKTOP TRANSITION (1301px - 1400px)
+  -------------------------------------------------------------------*/
+  @media screen and (max-width: 1400px) {
+	/* Make hamburger menu visible immediately at 1400px breakpoint */
+	.navbar-light .navbar-toggler {
+	  display: block;
+	  padding: 10px 12px;
+	  margin-right: 15px;
+	  transition: all 0.3s ease;
+	  z-index: 1001;
+	  position: relative;
+	  border: none;
+	}
+  
+	.top-navbar .navbar {
+	  padding: 20px 0 25px 0;
+	}
+	
+	.top-navbar .navbar-brand {
+	  margin-left: 0;
+	  padding-left: 20px;
+	}
+	
+	.top-navbar .navbar-brand img {
+	  max-height: 100px;
+	}
+	
+	/* Hide the default navbar collapse immediately */
+	.top-navbar .navbar-collapse:not(.side-menu) {
+	  display: none !important;
+	}
+	
+	/* Show mobile navigation controls */
+	.mobile-nav-controls {
+	  display: flex;
+	  align-items: center;
+	  margin-left: auto;
+	  margin-right: 5px;
+	}
+  
+	/* Container for better positioning */
+	.top-navbar .navbar > .container {
+	  display: flex;
+	  align-items: center;
+	  padding: 0 15px;
+	  padding-left: 5px;
+	}
+  
+	/* Logo positioning */
+	.top-navbar .navbar-brand {
+	  margin-right: auto;
+	  padding-left: 5px;
+	}
+  
+	/* Hamburger styling */
+	.navbar-light .navbar-toggler:focus {
+	  outline: none;
+	  box-shadow: none;
+	}
+	
+	.navbar-light .navbar-toggler-icon {
+	  background-image: none;
+	  position: relative;
+	}
+	
+	.navbar-light .navbar-toggler-icon,
+	.navbar-light .navbar-toggler-icon:before,
+	.navbar-light .navbar-toggler-icon:after {
+	  width: 30px;
+	  height: 3px;
+	  background-color: var(--pita-red);
+	  display: block;
+	  transition: all 0.3s ease;
+	}
+	
+	.navbar-light .navbar-toggler-icon:before,
+	.navbar-light .navbar-toggler-icon:after {
+	  content: '';
+	  position: absolute;
+	  left: 0;
+	}
+	
+	.navbar-light .navbar-toggler-icon:before {
+	  top: -8px;
+	}
+	
+	.navbar-light .navbar-toggler-icon:after {
+	  bottom: -8px;
+	}
+	
+	/* X transformation */
+	.navbar-light .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+	  background-color: transparent;
+	}
+	
+	.navbar-light .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+	  top: 0;
+	  transform: rotate(45deg);
+	  background-color: var(--pita-yellow);
+	}
+	
+	.navbar-light .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+	  bottom: 0;
+	  transform: rotate(-45deg);
+	  background-color: var(--pita-yellow);
+	}
+	
+	/* Side Menu Implementation */
+	.side-menu {
+	  position: fixed;
+	  top: 0;
+	  right: -100%;
+	  width: 100%;
+	  height: 100vh;
+	  background-color: var(--pita-white);
+	  z-index: 1000;
+	  transition: all 0.4s ease;
+	  overflow-y: auto;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  padding: 60px 0 30px;
+	}
+	
+	.side-menu.open {
+	  right: 0;
+	  width: 100%;
+	}
+	
+	/* Side menu container structure */
+	.side-menu .container {
+	  width: 100%;
+	  max-width: 100%;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  gap: 20px;
+	}
+	
+	/* Side menu navigation */
+	.side-menu .navbar-nav {
+	  width: 100%;
+	  text-align: center;
+	  padding: 0;
+	  margin: 10px 0 15px;
+	  display: flex;
+	  flex-direction: column;
+	  gap: 10px;
+	}
+	
+	.side-menu .nav-item {
+	  width: 100%;
+	  max-width: 500px;
+	  margin: 0 auto;
+	  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	  padding-bottom: 8px;
+	}
+	
+	.side-menu .nav-link {
+	  padding: 12px !important;
+	  display: block;
+	  transition: all 0.3s ease;
+	}
+	
+	/* Order button in side menu */
+	.side-menu .order-now-btn {
+	  margin: 20px auto;
+	  display: flex;
+	  justify-content: center;
+	  width: 260px;
+	  max-width: 90%;
+	  background-color: var(--pita-black);
+	  border-radius: 30px;
+	  padding: 0;
+	  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+	}
+	
+	.side-menu .order-now-btn .nav-link {
+	  padding: 18px 25px !important;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	  width: 100%;
+	  color: white !important;
+	  font-weight: 700;
+	  font-size: 18px;
+	  letter-spacing: 0.5px;
+	  border-bottom: none;
+	}
+	
+	.side-menu .order-now-btn img {
+	  width: 30px;
+	  height: auto;
+	  margin-right: 12px;
+	}
+	
+	.side-menu .order-now-btn .pita-text {
+	  color: var(--pita-yellow) !important;
+	  font-weight: 700;
+	  font-size: 18px;
+	}
+	
+	/* Hover effects */
+	.side-menu .nav-link:hover {
+	  color: var(--pita-red);
+	  background-color: rgba(207, 24, 24, 0.05);
+	  transform: translateY(-2px);
+	}
+
+	/* Active navigation item in side menu - red color */
+	.side-menu .nav-item.active .nav-link,
+	.side-menu .nav-item.active > .nav-link,
+	.side-menu .nav-link.active {
+	  color: var(--pita-red) !important;
+	  background-color: rgba(207, 24, 24, 0.1) !important;
+	  font-weight: 600 !important;
+	}
+	
+	.side-menu .order-now-btn:hover {
+	  background-color: var(--pita-yellow);
+	  transform: translateY(-2px);
+	}
+	
+	.side-menu .order-now-btn:hover .nav-link {
+	  color: var(--pita-red) !important;
+	}
+	
+	.side-menu .order-now-btn:hover .pita-text {
+	  color: var(--pita-red) !important;
+	}
+	
+	/* Find a Pita Way button */
+	.find-location-btn {
+	  margin-right: 15px;
+	  margin-left: -10px;
+	  background-color: transparent;
+	  border: none;
+	  display: flex;
+	  align-items: center;
+	}
+	
+	/* Side menu overlay */
+	.side-menu-overlay {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  width: 100%;
+	  height: 100%;
+	  background-color: rgba(0, 0, 0, 0.5);
+	  z-index: 999;
+	  opacity: 0;
+	  visibility: hidden;
+	  transition: all 0.3s ease;
+	}
+	
+	.side-menu-overlay.active {
+	  opacity: 1;
+	  visibility: visible;
+	}
+	
+	/* Video header adjustments */
+	.video-header {
+	  height: 100vh;
+	}
+	
+	.video-overlay .container {
+	  padding-top: 100px;
+	}
+	
+	.video-overlay h1 {
+	  margin-top: 60px;
+	}
+	
+	/* Smooth animations */
+	.side-menu, .side-menu-overlay, .navbar-toggler-icon, 
+	.navbar-toggler-icon:before, .navbar-toggler-icon:after {
+	  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	  -moz-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	  -o-transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+	}
+  }
+  
+  /*------------------------------------------------------------------
+	  FIND A PITA WAY BUTTON VISIBILITY
+  -------------------------------------------------------------------*/
+  /* Show "FIND A PITA WAY" button up to 1300px */
+  @media screen and (max-width: 1300px) {
+	.find-location-btn {
+	  display: flex !important;
+	}
+  }
+  
+  /* Hide "FIND A PITA WAY" button on larger screens */
+  @media screen and (min-width: 1301px) {
+	.find-location-btn {
+	  display: none !important;
+	}
+  }
+  
+  /* Apply consistent styling to the "FIND A PITA WAY" text across all screen sizes */
+  .find-location-btn .find-text,
+  .find-location-btn .pita-text {
+	font-size: 16px !important;
+	font-weight: 600 !important;
+	line-height: 1.1 !important;
+  }
+  
+  /*------------------------------------------------------------------
+	  SCREEN TRANSITION RELIABILITY (1201px - 1400px)
+  -------------------------------------------------------------------*/
+  @media screen and (min-width: 1301px) and (max-width: 1400px) {
+	.top-navbar .navbar-brand img {
+	  max-height: 90px;
+	}
+  }
+  
+  @media screen and (min-width: 1201px) and (max-width: 1300px) {
+	.top-navbar .navbar-brand img {
+	  max-height: 85px;
+	}
+  }
+  
+  /*------------------------------------------------------------------
+	  LARGE TABLETS (992px - 1200px)
+  -------------------------------------------------------------------*/
+  @media screen and (min-width: 992px) and (max-width: 1200px) {
+	.top-navbar .navbar-brand img {
+	  max-height: 80px;
+	}
+	
+	.video-overlay h1 {
+	  font-size: 50px;
+	  margin-top: 80px;
+	}
+	
+	.video-overlay p {
+	  font-size: 18px;
+	}
+	
+	.contact-imfo-box {
+	  border-radius: 60px;
+	}
+	
+	/* Fixed stuff-box background for responsive displays */
+	.stuff-box {
+	  background-attachment: scroll;
+	}
+	
+	.stuff-box .container {
+	  max-width: 95%;
+	  width: 95%;
+	}
+	
+	.stuff-box .col-md-4 {
+	  flex: 0 0 48%;
+	  max-width: 48%;
+	}
+  }
+  
+  /*------------------------------------------------------------------
+	  MEDIUM TABLETS (768px - 991px)
+  -------------------------------------------------------------------*/
+  @media screen and (min-width: 768px) and (max-width: 991px) {
+	.top-navbar .navbar-brand img {
+	  max-height: 75px;
+	}
+	
+	.video-overlay h1 {
+	  font-size: 42px;
+	  margin-top: 100px;
+	}
+	
+	.our-team {
+	  margin-bottom: 50px;
+	}
+	
+	.contact-imfo-box {
+	  border-radius: 50px;
+	  padding: 25px 0;
+	}
+	
+	/* Fixed stuff-box background for tablets */
+	.stuff-box {
+	  background-attachment: scroll;
+	  background-position: center center;
+	  background-repeat: no-repeat;
+	  background-size: cover;
+	}
+	
+	.stuff-box .container {
+	  max-width: 95%;
+	  width: 95%;
+	}
+	
+	.stuff-box .col-md-4 {
+	  flex: 0 0 48%;
+	  max-width: 48%;
+	  margin-bottom: 40px;
+	}
+	
+	/* Container adjustment */
+	.top-navbar .navbar > .container {
+	  padding: 0 10px;
+	}
+	
+	/* Find button text adjustment */
+	.find-location-btn .find-text,
+	.find-location-btn .pita-text {
+	  font-size: 13px;
+	}
+	
+	.find-location-btn img {
+	  width: 22px;
+	}
+	
+	/* Footer adjustment for tablets */
+	.desktop-footer {
+	  display: none;
+	}
+	
+	.mobile-footer {
+	  display: block;
+	}
+	
+	.footer-logo {
+	  max-width: 150px;
+	  margin-bottom: 15px;
+	}
+	
+	/* About section adjustments */
+	.about-section-box {
+	  padding: 60px 0;
+	}
+	
+	.about-section-box .inner-column h1 {
+	  font-size: 36px;
+	}
+	
+	.about-section-box .inner-column h4 {
+	  font-size: 18px;
+	}
+	
+	.about-section-box .inner-column p {
+	  font-size: 16px;
+	}
+	
+	
+	
+  }
+  
+  /*------------------------------------------------------------------
+	  MOBILE LANDSCAPE (576px - 767px)
+  -------------------------------------------------------------------*/
+  @media screen and (min-width: 576px) and (max-width: 767px) {
+	.top-navbar .navbar-brand img {
+	  max-height: 70px;
+	}
+	
+	.video-overlay h1 {
+	  font-size: 36px;
+	  margin-top: 120px;
+	}
+	
+	.video-overlay p {
+	  font-size: 16px;
+	}
+	
+	.contact-imfo-box {
+	  border-radius: 40px;
+	  padding: 20px 0;
+	}
+	
+	/* Fixed stuff-box background for mobile landscape */
+	.stuff-box {
+	  background-attachment: scroll;
+	  background-position: center center;
+	  background-size: cover;
+	  padding: 60px 0;
+	}
+	
+	.stuff-box:before {
+	  opacity: 0.8; /* Increase overlay opacity for better text readability on mobile */
+	}
+	
+	.stuff-box .container {
+	  width: 90%;
+	}
+	
+	.stuff-box .col-md-4 {
+	  flex: 0 0 100%;
+	  max-width: 100%;
+	  margin-bottom: 40px;
+	}
+	
+	.our-team .pic img {
+	  max-width: 100%;
+	  width: 100%;
+	  margin: 0 auto;
+	}
+
+	.find-location-btn {
+	  margin-left: -15px; /* Increase left shift on smaller screens */
+	}
+	
+	/* Mobile menu adjustments */
+	.side-menu .nav-link {
+	  font-size: 16px;
+	  padding: 12px;
+	}
+  }
+  
+  /*------------------------------------------------------------------
+	  MOBILE PORTRAIT (up to 575px)
+  -------------------------------------------------------------------*/
+  @media screen and (max-width: 575px) {
+	/* Navbar adjustments */
+	.top-navbar .navbar {
+	  padding: 15px 0 20px 0;
+	}
+	
+	.top-navbar .navbar-brand img {
+	  max-height: 65px;
+	}
+	
+	/* Video section adjustments */
+	.video-overlay h1 {
+	  font-size: 45px;
+	  margin-top: 140px;
+	  padding: 0 15px;
+	}
+	
+	.video-overlay p {
+	  font-size: 19px;
+	  padding: 0 15px;
+	}
+	
+	/* Menu section adjustments */
+	.heading-title h2 {
+	  font-size: 24px;
+	}
+	
+	.heading-title p {
+	  font-size: 16px;
+	}
+	
+	.contact-imfo-box {
+	  border-radius: 30px;
+	  padding: 15px 0;
+	}
+	
+	/* Stuff-box adjustments */
+	.stuff-box {
+	  background-attachment: scroll;
+	  background-position: center center;
+	  background-size: cover;
+	  padding: 50px 0;
+	}
+	
+	.stuff-box:before {
+	  background-color: rgba(255, 255, 255, 0.85); /* Increase opacity for better text readability on mobile */
+	}
+	
+	.stuff-box .container {
+	  width: 92%;
+	}
+	
+	/* Team boxes adjustments */
+	.our-team {
+	  margin-bottom: 35px;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: center;
+	  text-align: center;
+	  padding: 0 15px;
+	  max-width: 500px;
+	  margin: 0 auto 40px;
+	}
+	
+	.our-team .pic {
+	  margin-bottom: 15px;
+	  width: 100%;
+	  max-width: 500px;
+	}
+
+	.our-team .pic img {
+	  max-width: 90%;
+	  width: 90%;
+	  margin: 0 auto;
+	  display: block;
+	}
+
+	.enhanced-menu-item .pic img {
+	  max-width: 90%;
+	  width: 90%;
+	  margin: 0 auto;
+	  display: block;
+	}
+
+	/* Menu order button */
+	.menu-order-btn img {
+	  width: 30px;
+	  height: auto;
+	}
+	
+	/* Row center */
+	.stuff-box .row {
+	  justify-content: center;
+	}
+	
+	/* Col adjustments */
+	.stuff-box .col-md-4 {
+	  flex: 0 0 100%;
+	  max-width: 100%;
+	  margin-bottom: 30px;
+	}
+	
+	/* Button adjustments */
+	.order-now-btn {
+	  padding: 8px 5px;
+	}
+	
+	.order-now-btn .nav-link {
+	  padding: 2px 15px 2px 2px !important;
+	}
+	
+	/* Mobile menu and find button */
+	.side-menu .nav-link {
+	  font-size: 16px;
+	  padding: 12px;
+	}
+	
+	.find-location-btn {
+	  margin-left: -15px;
+	}
+	
+	/* About section adjustments */
+	.about-section-box {
+	  padding: 60px 0;
+	}
+	
+	.about-section-box .inner-column {
+	  padding: 15px;
+	  text-align: center;
+	  margin-bottom: 40px;
+	}
+	
+	.about-section-box .inner-column h1 {
+	  font-size: 36px;
+	}
+	
+	.about-section-box .inner-column h4:after {
+	  left: 50%;
+	  transform: translateX(-50%);
+	}
+	
+	.about-section-box .inner-column p {
+	  margin-left: auto;
+	  margin-right: auto;
+	}
+	
+	/* Reverse column order on mobile - text first, then image */
+	.about-section-box .row {
+	  flex-direction: column-reverse;
+	}
+	
+	.about-section-box .col-lg-6:last-child {
+	  margin-bottom: 30px;
+	}
+	
+
+	
+	/* Footer adjustments */
+	.desktop-footer {
+	  display: none;
+	}
+	
+	.mobile-footer {
+	  display: block;
+	}
+	
+	.mobile-footer .footer-nav {
+	  display: grid;
+	  grid-template-columns: 1fr 1fr; /* Creates 2 columns */
+	  grid-gap: 10px;
+	  width: 100%;
+	  max-width: 400px;
+	  margin: 0 auto;
+	}
+	
+	.mobile-footer .footer-nav li {
+	  padding: 8px 0;
+	  width: 100%;
+	  text-align: center;
+	  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+	}
+	
+	.company-name {
+	  font-size: 11px;
+	}
+	
+	/* Save More Banner adjustments */
+	.qt-box .lead strong {
+	  font-size: 32px;
+	}
+	
+	.qt-background p {
+	  font-size: 16px;
+	}
+  }
+  
+  /*------------------------------------------------------------------
+	  SMALL MOBILE DEVICES (up to 480px)
+  -------------------------------------------------------------------*/
+  @media screen and (max-width: 480px) {
+	/* Force the navbar container to use flexbox with no wrapping */
+	.top-navbar .navbar > .container {
+	  display: flex !important;
+	  flex-wrap: nowrap !important;
+	  justify-content: space-between !important;
+	  align-items: center !important;
+	  padding: 0 10px !important;
+	  width: 100% !important;
+	}
+	
+	/* Fix the brand logo positioning */
+	.top-navbar .navbar-brand {
+	  flex: 0 0 auto !important;
+	  padding-left: 0 !important;
+	  margin: 0 !important;
+	  max-width: 35% !important;
+	  display: flex !important;
+	  align-items: center !important;
+	}
+	
+	/* Ensure the navbar-toggler stays on the right */
+	.navbar-light .navbar-toggler {
+	  order: 3 !important;
+	  padding: 8px !important;
+	  margin: 0 0 0 auto !important;
+	  flex: 0 0 auto !important;
+	}
+	
+	/* Ensure all elements maintain proper size relationships */
+	.top-navbar .navbar-brand img {
+	  max-height: 60px !important;
+	  width: auto !important;
+	  object-fit: contain !important;
+	}
+	
+	/* Fix the location button display */
+	.find-location-btn {
+	  order: 2 !important;
+	  flex: 1 1 auto !important;
+	  display: flex !important;
+	  align-items: center !important;
+	  justify-content: center !important;
+	  margin: 0 5px !important;
+	  max-width: 50% !important;
+	}
+	
+	.find-location-btn .nav-link {
+	  padding: 4px 8px !important;
+	  display: flex !important;
+	  align-items: center !important;
+	  white-space: nowrap !important;
+	}
+	
+	.find-location-btn img {
+	  width: 22px !important;
+	  margin-right: 5px !important;
+	}
+	
+	.find-location-btn .find-text,
+	.find-location-btn .pita-text {
+	  font-size: 15px !important;
+	}
+	
+	.navbar-light .navbar-toggler {
+	  padding: 6px !important;
+	}
+	
+	.navbar-light .navbar-toggler-icon,
+	.navbar-light .navbar-toggler-icon:before,
+	.navbar-light .navbar-toggler-icon:after {
+	  width: 22px !important;
+	  height: 2px !important;
+	}
+	
+	/* Fix the flex layout to force everything on one line */
+	.mobile-nav-controls {
+	  display: flex !important;
+	  align-items: center !important;
+	  flex-wrap: nowrap !important;
+	  justify-content: flex-end !important;
+	  margin-left: auto !important;
+	}
+  }
+  
+  /*------------------------------------------------------------------
+	  EXTRA SMALL MOBILE DEVICES (up to 375px)
+  -------------------------------------------------------------------*/
+  @media screen and (max-width: 375px) {
+	.top-navbar .navbar-brand img {
+	  max-height: 50px !important;
+	}
+	
+	.find-location-btn img {
+	  width: 18px !important;
+	  margin-right: 3px !important;
+	}
+	
+	.find-location-btn .find-text,
+	.find-location-btn .pita-text {
+	  font-size: 13px !important;
+	}
+	
+	.navbar-light .navbar-toggler {
+	  padding: 5px !important;
+	  min-width: 35px !important;
+	}
+	
+	.navbar-light .navbar-toggler-icon,
+	.navbar-light .navbar-toggler-icon:before,
+	.navbar-light .navbar-toggler-icon:after {
+	  width: 20px !important;
+	  height: 2px !important;
+	}
+	
+	.navbar-light .navbar-toggler-icon:before {
+	  top: -6px !important;
+	}
+	
+	.navbar-light .navbar-toggler-icon:after {
+	  bottom: -6px !important;
+	}
+	
+	.video-overlay h1 {
+	  font-size: 28px;
+	  margin-top: 160px;
+	}
+	
+	.video-overlay p {
+	  font-size: 14px;
+	}
+	
+	.btn {
+	  padding: 10px 20px;
+	  font-size: 14px;
+	}
+	
+	/* Additional mobile fixes for smallest screens */
+	.stuff-box {
+	  padding: 40px 0;
+	}
+	
+	.our-team .pic img {
+	  max-width: 100%;
+	  width: 100%;
+	}
+	
+	/* Mobile menu adjustments for very small screens */
+	.side-menu .nav-link {
+	  font-size: 15px;
+	  padding: 10px;
+	}
+	
+	.find-location-btn {
+	  margin-left: -12px; /* Slightly less shift on very small screens for balance */
+	  margin-right: 8px; /* Reduce right margin slightly */
+	}
+	
+	.side-menu .order-now-btn {
+	  width: 240px;
+	}
+	
+	.side-menu .order-now-btn .nav-link {
+	  font-size: 16px;
+	  padding: 15px 20px !important;
+	}
+	
+	/* Footer adjustments */
+	.footer-nav li a {
+	  font-size: 13px;
+	}
+	
+	.f-social li a {
+	  width: 35px;
+	  height: 35px;
+	  font-size: 16px;
+	}
+  }
+  
+  /*------------------------------------------------------------------
+	  EXTREMELY SMALL MOBILE DEVICES (up to 320px)
+  -------------------------------------------------------------------*/
+  @media screen and (max-width: 320px) {
+	.top-navbar .navbar-brand img {
+	  max-height: 42px !important;
+	}
+	
+	.find-location-btn .find-text,
+	.find-location-btn .pita-text {
+	  font-size: 11px !important;
+	  letter-spacing: -0.3px !important;
+	}
+	
+	.find-location-btn img {
+	  width: 15px !important;
+	  margin-right: 2px !important;
+	}
+	
+	.navbar-light .navbar-toggler {
+	  padding: 4px !important;
+	  min-width: 30px !important;
+	}
+	
+	/* Make container more flexible on small screens */
+	.top-navbar .navbar > .container {
+	  padding: 0 5px;
+	  justify-content: space-between;
+	}
+  
+	/* Ensure flex items don't grow too much */
+	.navbar-brand, .find-location-btn, .navbar-toggler {
+	  flex-shrink: 1;
+	}
+  
+	/* Fix for flex layout to prevent wrapping */
+	.mobile-nav-controls {
+	  display: flex;
+	  align-items: center;
+	  white-space: nowrap;
+	  flex-wrap: nowrap;
+	}
+  }
+  
+  /*------------------------------------------------------------------
+	  HEIGHT-BASED MEDIA QUERIES
+  -------------------------------------------------------------------*/
+  /* Medium-height screens */
+  @media screen and (min-height: 701px) and (max-height: 900px) {
+	.side-menu .navbar-nav {
+	  gap: 8px; /* Slightly reduced gap for medium screens */
+	}
+  }
+  
+  /* Shorter screens */
+  @media screen and (max-height: 700px) {
+	/* For shorter screens, maintain spacing but compress height */
+	.side-menu {
+	  padding: 50px 0 20px;
+	  justify-content: flex-start;
+	}
+	
+	.side-menu .navbar-nav {
+	  margin: 5px 0 10px;
+	  gap: 5px; /* Smaller gaps on short screens */
+	}
+	
+	.side-menu .nav-item {
+	  padding-bottom: 5px;
+	}
+	
+	.side-menu .nav-link {
+	  padding: 8px !important;
+	  font-size: 16px;
+	}
+	
+	.side-menu .order-now-btn {
+	  margin: 15px auto;
+	}
+  }
+  
+  /*------------------------------------------------------------------
+	  DEVICE-SPECIFIC FIXES
+  -------------------------------------------------------------------*/
+  /* iPhone-specific adjustments */
+  @media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 812px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+	.find-location-btn {
+	  margin-left: -20px; /* Move even further left on iPhones */
+	}
+	
+	.navbar > .container {
+	  padding-left: 5px; /* Minimal padding on iPhone */
+	}
+  }
+  
+  /* iOS Specific Fixes */
+  @supports (-webkit-touch-callout: none) {
+	.video-header {
+	  height: -webkit-fill-available;
+	}
+  
+	/* iOS side menu height fix */
+	.side-menu {
+	  height: -webkit-fill-available;
+	}
+	
+	/* iOS background image fix */
+	.stuff-box {
+	  background-attachment: scroll;
+	}
+  }
+  
+  /* iPhone Notch Handling */
+  @supports (padding-top: env(safe-area-inset-top)) {
+	.top-navbar .navbar {
+	  padding-top: max(20px, env(safe-area-inset-top));
+	}
+  
+	/* Side menu notch spacing */
+	.side-menu {
+	  padding-top: max(80px, calc(env(safe-area-inset-top) + 60px));
+	}
+  
+	.side-menu-close {
+	  top: max(20px, calc(env(safe-area-inset-top) + 10px));
+	}
+  }
+  
+  /* Performance Optimizations */
+  .video-header video {
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+  }
+
