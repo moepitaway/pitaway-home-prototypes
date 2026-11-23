@@ -508,14 +508,9 @@
   .fr:nth-child(even) { grid-template-columns:.9fr 1.1fr; }
   .fr:nth-child(even) .fr__media { order:2; }
   .fr__media { position:relative; height:380px; display:grid; place-items:center; }
-  .fr__disc { position:absolute; width:340px; height:340px; border-radius:50%; }
-  .fr--soup .fr__disc { background:radial-gradient(circle at 35% 30%, #ffd9a0, #f6b25c); }
-  .fr--wings .fr__disc { background:radial-gradient(circle at 35% 30%, #4a443d, #24211d); }
-  .fr--wrap .fr__disc { background:radial-gradient(circle at 35% 30%, #f5b3a8, #e06b5c); }
   .fr__img { position:relative; width:min(88%,470px); max-height:330px; object-fit:contain; filter:drop-shadow(0 30px 30px rgba(40,25,10,.28)); transform:translate3d(0, var(--drift,0px), 0); will-change:transform; }
   .fr--soup .fr__img { width:min(66%,350px); }
-  .fr__num { font-family:'Code Bold','Rubik',sans-serif; font-size:13px; letter-spacing:.2em; color:var(--muted); display:flex; align-items:center; gap:12px; margin-bottom:14px; }
-  .fr__num::after { content:"New"; font-size:10.5px; letter-spacing:.16em; text-transform:uppercase; color:#fff; background:var(--red); padding:4px 10px; border-radius:999px; }
+  .fr__new { display:inline-block; font-family:'Code Bold','Rubik',sans-serif; font-size:11px; letter-spacing:.14em; text-transform:uppercase; color:#fff; background:var(--red); padding:4px 11px; border-radius:999px; margin-bottom:14px; }
   .fr__name { font-family:'Code Bold','Rubik',sans-serif; font-size:clamp(34px,3.8vw,52px); line-height:.98; text-transform:uppercase; letter-spacing:-.01em; margin:0 0 14px; color:var(--ink); }
   .fr__name small { display:block; font-family:'Semringah',cursive; font-size:.52em; text-transform:none; letter-spacing:0; color:var(--red); margin-bottom:4px; }
   .fr__desc { font-size:16.5px; line-height:1.65; color:#5b5247; margin:0 0 22px; max-width:400px; }
@@ -532,7 +527,6 @@
   /* Dill Fries: charcoal cinematic feature */
   .dlk { background:#1d1a16; color:#f3ede4; position:relative; overflow:hidden; }
   .dlk__in { max-width:1180px; margin:0 auto; padding:96px 28px; display:grid; grid-template-columns:1fr 1.1fr; align-items:center; gap:30px; position:relative; }
-  .dlk__glow { position:absolute; right:-8%; top:50%; width:720px; height:720px; transform:translateY(-50%); border-radius:50%; background:radial-gradient(circle, rgba(255,222,23,.22), rgba(255,222,23,0) 62%); pointer-events:none; }
   .dlk__kicker { display:block; font-family:'Code Bold','Rubik',sans-serif; font-size:12px; letter-spacing:.28em; text-transform:uppercase; color:#b9ad9d; margin-bottom:16px; }
   .dlk__name { font-family:'Code Bold','Rubik',sans-serif; font-size:clamp(52px,7vw,104px); line-height:.9; letter-spacing:-.02em; text-transform:uppercase; margin:0 0 10px; color:#fff; }
   .dlk__pun { font-family:'Semringah',cursive; font-size:clamp(28px,3vw,40px); color:var(--yellow,#ffde17); margin:0 0 22px; line-height:1; }
@@ -553,7 +547,6 @@
   @media (max-width:991px){
     .fr, .fr:nth-child(even) { gap:28px; }
     .fr__media { height:300px; }
-    .fr__disc { width:260px; height:260px; }
     .dlk__in { padding:76px 28px; }
   }
   @media (max-width:700px){
@@ -564,11 +557,9 @@
     .fr, .fr:nth-child(even) { grid-template-columns:42% 1fr; gap:14px; padding:22px 0; }
     .fr:nth-child(even) .fr__media { order:0; }
     .fr__media { height:150px; }
-    .fr__disc { width:128px; height:128px; }
     .fr__img, .fr--soup .fr__img { width:100%; max-height:120px; }
     .fr--soup .fr__img { width:86%; }
-    .fr__num { font-size:11px; margin-bottom:6px; gap:8px; }
-    .fr__num::after { font-size:9px; padding:3px 8px; }
+    .fr__new { font-size:9.5px; padding:3px 9px; margin-bottom:8px; }
     .fr__name { font-size:22px; margin-bottom:6px; }
     .fr__name small { display:none; }
     .fr__desc { font-size:13.5px; line-height:1.5; margin-bottom:10px; }
@@ -579,13 +570,11 @@
     .dlk__in { grid-template-columns:1fr; padding:56px 16px 60px; gap:10px; }
     .dlk__media { order:-1; min-height:0; margin-bottom:10px; }
     .dlk__media img { width:78%; }
-    .dlk__glow { width:420px; height:420px; right:-30%; top:22%; }
     .dlk__desc { font-size:15px; }
     .dlk__btn { width:100%; justify-content:center; }
   }
   @media (max-width:360px){
     .fr, .fr:nth-child(even) { grid-template-columns:38% 1fr; }
-    .fr__disc { width:108px; height:108px; }
     .fr__name { font-size:19px; }
     .fr__desc { font-size:12.5px; }
   }
@@ -594,29 +583,28 @@
 <section class="nwk" aria-label="New at Pita Way">
   <div class="nwk__in">
     <div class="nwk__head nw-rise">
-      <div><span class="nwk__kicker">Now serving</span><h2 class="nwk__title">New on the <em>menu</em></h2></div>
-      <p class="nwk__note">Three new favorites made fresh in house, ready when you are.</p>
+      <div><h2 class="nwk__title">New on the <em>menu</em></h2></div>
     </div>
     <div class="nwk__frames">
       <article class="fr fr--soup">
-        <div class="fr__media nw-rise"><span class="fr__disc"></span><img class="fr__img" data-drift="18" loading="lazy" src="menu-images/soup.webp?v=20261104" alt="Curry Rice Stew and Creamy Cauliflower soups"></div>
-        <div class="nw-rise"><span class="fr__num">01</span>
-          <h3 class="fr__name"><small>Soup season is here</small>Soups</h3>
+        <div class="fr__media nw-rise"><img class="fr__img" data-drift="18" loading="lazy" src="menu-images/soup.webp?v=20261104" alt="Curry Rice Stew and Creamy Cauliflower soups"></div>
+        <div class="nw-rise"><span class="fr__new">New</span>
+          <h3 class="fr__name">Soups</h3>
           <p class="fr__desc">Curry Rice Stew (with or without rice) or Creamy Cauliflower, made fresh in house.</p>
           <div class="fr__meta"><b>8 oz</b><b>12 oz</b></div>
           <a class="fr__link" href="https://onlineorders.pitaway.com"><i>&rarr;</i>Order soup</a></div>
       </article>
       <article class="fr fr--wings">
-        <div class="fr__media nw-rise"><span class="fr__disc"></span><img class="fr__img" data-drift="18" loading="lazy" src="menu-images/wings.webp?v=20261104" alt="Wings with fries and dip"></div>
-        <div class="nw-rise"><span class="fr__num">02</span>
-          <h3 class="fr__name"><small>Saucy &amp; made to share</small>Wings</h3>
+        <div class="fr__media nw-rise"><img class="fr__img" data-drift="18" loading="lazy" src="menu-images/wings.webp?v=20261104" alt="Wings with fries and dip"></div>
+        <div class="nw-rise"><span class="fr__new">New</span>
+          <h3 class="fr__name">Wings</h3>
           <p class="fr__desc">5 or 10 wings, or 5 wings with fries &amp; a drink. Pick your sauce and dip.</p>
           <a class="fr__link" href="https://onlineorders.pitaway.com"><i>&rarr;</i>Order wings</a></div>
       </article>
       <article class="fr fr--wrap">
-        <div class="fr__media nw-rise"><span class="fr__disc"></span><img class="fr__img" data-drift="18" loading="lazy" src="menu-images/buffalo-wrap.webp?v=20261123" alt="Buffalo Chicken Wrap"></div>
-        <div class="nw-rise"><span class="fr__num">03</span>
-          <h3 class="fr__name"><small>A wrap with a kick</small>Buffalo Chicken Wrap</h3>
+        <div class="fr__media nw-rise"><img class="fr__img" data-drift="18" loading="lazy" src="menu-images/buffalo-wrap.webp?v=20261123" alt="Buffalo Chicken Wrap"></div>
+        <div class="nw-rise"><span class="fr__new">New</span>
+          <h3 class="fr__name">Buffalo Chicken Wrap</h3>
           <p class="fr__desc">Chicken, garlic, buffalo sauce, cheddar, pickles &amp; tourshi. Crazy delicious.</p>
           <a class="fr__link" href="https://onlineorders.pitaway.com"><i>&rarr;</i>Order the wrap</a></div>
       </article>
@@ -626,14 +614,12 @@
 </section>
 
 <section class="dlk" aria-label="Dill Fries, limited time">
-  <span class="dlk__glow" aria-hidden="true"></span>
   <div class="dlk__in">
     <div class="nw-rise">
-      <span class="dlk__kicker">Limited time &middot; Fan favorite</span>
+      <span class="dlk__kicker">Limited time</span>
       <h2 class="dlk__name">Dill Fries</h2>
-      <p class="dlk__pun">It's kind of a big dill.</p>
       <p class="dlk__desc">Crispy fries loaded with creamy dill, pickles and feta.</p>
-      <p class="dlk__plus">Pickle people: add our <b>new Dill Sauce</b> to any Sandweech or Bowl.</p>
+      <p class="dlk__plus">Add our <b>new Dill Sauce</b> to any Sandweech or Bowl.</p>
       <a class="dlk__btn" href="https://onlineorders.pitaway.com"><img src="images/WebiconPNG.png" alt="">Get Dill Fries</a>
     </div>
     <div class="dlk__media nw-rise">
@@ -893,7 +879,6 @@ document.addEventListener('DOMContentLoaded', function(){
 <section class="cmk" aria-label="Catering made easy">
   <div class="cmk__in">
     <div class="nw-rise">
-      <span class="cmk__kicker">Catering</span>
       <h2 class="cmk__title">Catering made <em>easy</em></h2>
       <p class="cmk__lead">Corporate lunch, family gathering or game day. Fresh Mediterranean food that everyone will love.</p>
       <ul class="cmk__list">
