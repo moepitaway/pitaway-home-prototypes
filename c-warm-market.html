@@ -429,7 +429,7 @@
    </style>
    <div class="catering-banner cb2" id="catering-band">
 	   <div class="cb2-tray" aria-hidden="true">
-		   <img loading="lazy" src="menu-images/catering-feast.webp?v=20261003a" width="1200" height="916" alt="">
+		   <img loading="lazy" src="backgrounds/catering-boxes.webp?v=20261123" width="1000" height="603" alt="" class="cb-photo">
 	   </div>
 	   <div class="cb2-wrap">
 		   <div class="catering-banner-text">
@@ -477,7 +477,7 @@
    <!-- Catering strip, phone version (unchanged earlier design) -->
    <div class="catering-banner cb-phone">
 	   <div class="banner-food-decor banner-food-left">
-		   <img loading="lazy" src="menu-images/stuff-img-05.png" alt="">
+		   <img loading="lazy" src="backgrounds/catering-boxes.webp?v=20261123" alt="" class="cb-photo">
 	   </div>
 	   <div class="container">
 		   <div class="catering-banner-content">
@@ -1573,6 +1573,15 @@ body { background:#fbf5ea; }
 /* original Our Menu kept; only stop the 53px titles from running off small phones */
 @media (max-width:575px){ .our-team .title { font-size:clamp(28px,10.5vw,53px) !important; } }
 
+
+/* We Cater & Deliver: real catering photo in place of the floating tray */
+.cb2 .cb2-tray { width:300px; bottom:-78px; }
+.cb2 .cb2-tray img.cb-photo, .catering-banner.cb-phone .banner-food-left img.cb-photo { border-radius:14px; box-shadow:0 16px 34px rgba(0,0,0,.32); }
+.cb2 .cb2-wrap { padding-right:340px; }
+@media (max-width:1199px){ .cb2 .cb2-tray { width:250px; bottom:-66px; right:26px; } .cb2 .cb2-wrap { padding-right:290px; } }
+@media (max-width:991px){ .cb2 .cb2-tray { width:210px; bottom:-52px; right:22px; } .cb2 .cb2-wrap { padding-right:240px; } }
+.catering-banner.cb-phone .banner-food-left img.cb-photo { width:300px; max-width:80vw; }
+.catering-banner.cb-phone { margin-bottom:118px; }
 
 </style>
 </body>
