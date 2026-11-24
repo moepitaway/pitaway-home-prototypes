@@ -429,7 +429,7 @@
    </style>
    <div class="catering-banner cb2" id="catering-band">
 	   <div class="cb2-tray" aria-hidden="true">
-		   <img loading="lazy" src="backgrounds/catering-boxes.webp?v=20261123" width="1000" height="603" alt="" class="cb-photo">
+		   <img loading="lazy" src="backgrounds/catering-boxes.webp?v=20261123b" width="1000" height="773" alt="Pita Way Shawarma and Bowl Bar catering" class="cb-photo">
 	   </div>
 	   <div class="cb2-wrap">
 		   <div class="catering-banner-text">
@@ -477,7 +477,7 @@
    <!-- Catering strip, phone version (unchanged earlier design) -->
    <div class="catering-banner cb-phone">
 	   <div class="banner-food-decor banner-food-left">
-		   <img loading="lazy" src="backgrounds/catering-boxes.webp?v=20261123" alt="" class="cb-photo">
+		   <img loading="lazy" src="backgrounds/catering-boxes.webp?v=20261123b" width="1000" height="773" alt="Pita Way Shawarma and Bowl Bar catering" class="cb-photo">
 	   </div>
 	   <div class="container">
 		   <div class="catering-banner-content">
@@ -1541,14 +1541,18 @@ document.addEventListener('DOMContentLoaded', function() {
 @media (max-width:575px){ .our-team .title { font-size:clamp(28px,10.5vw,53px) !important; } }
 
 
-/* We Cater & Deliver: real catering photo in place of the floating tray */
-.cb2 .cb2-tray { width:300px; bottom:-78px; }
-.cb2 .cb2-tray img.cb-photo, .catering-banner.cb-phone .banner-food-left img.cb-photo { border-radius:14px; box-shadow:0 16px 34px rgba(0,0,0,.32); }
-.cb2 .cb2-wrap { padding-right:340px; }
-@media (max-width:1199px){ .cb2 .cb2-tray { width:250px; bottom:-66px; right:26px; } .cb2 .cb2-wrap { padding-right:290px; } }
-@media (max-width:991px){ .cb2 .cb2-tray { width:210px; bottom:-52px; right:22px; } .cb2 .cb2-wrap { padding-right:240px; } }
-.catering-banner.cb-phone .banner-food-left img.cb-photo { width:300px; max-width:80vw; }
-.catering-banner.cb-phone { margin-bottom:118px; }
+/* We Cater & Deliver: full shoot photo in place of the floating tray (whole photo, nothing cropped) */
+.cb2 .cb2-tray { width:250px; bottom:-96px; }
+.cb2 .cb2-wrap { padding-right:300px; }
+.cb2 .cb2-tray img.cb-photo, .catering-banner.cb-phone .banner-food-left img.cb-photo { border-radius:14px; box-shadow:0 16px 34px rgba(0,0,0,.30); }
+@media (max-width:1199px){ .cb2 .cb2-tray { width:220px; bottom:-84px; right:26px; } .cb2 .cb2-wrap { padding-right:260px; } }
+@media (max-width:991px){ .cb2 .cb2-tray { width:190px; bottom:-70px; right:22px; } .cb2 .cb2-wrap { padding-right:220px; } }
+.catering-banner.cb-phone { padding-bottom:178px; }
+.catering-banner.cb-phone .banner-food-left { bottom:-108px; }
+.catering-banner.cb-phone .banner-food-left img.cb-photo { width:280px; max-width:76vw; }
+/* red strip flows straight into the next section's color (no white band in between) */
+.catering-banner.cb-phone { margin-bottom:0; border-bottom:138px solid #f3ede4; background-clip:padding-box; }
+.catering-banner.cb2 { background:#f3ede4; margin-bottom:0; }
 
 </style>
 </body>
