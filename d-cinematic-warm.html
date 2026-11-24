@@ -429,7 +429,7 @@
    </style>
    <div class="catering-banner cb2" id="catering-band">
 	   <div class="cb2-tray" aria-hidden="true">
-		   <img loading="lazy" src="menu-images/catering-feast.webp?v=20261003a" width="1200" height="916" alt="">
+		   <img loading="lazy" src="menu-images/catering-box-hungry.webp?v=20261123" width="900" height="622" alt="">
 	   </div>
 	   <div class="cb2-wrap">
 		   <div class="catering-banner-text">
@@ -477,7 +477,7 @@
    <!-- Catering strip, phone version (unchanged earlier design) -->
    <div class="catering-banner cb-phone">
 	   <div class="banner-food-decor banner-food-left">
-		   <img loading="lazy" src="menu-images/stuff-img-05.png" alt="">
+		   <img loading="lazy" src="menu-images/catering-box-hungry.webp?v=20261123" alt="">
 	   </div>
 	   <div class="container">
 		   <div class="catering-banner-content">
@@ -1539,6 +1539,10 @@ document.addEventListener('DOMContentLoaded', function() {
 }
 /* original Our Menu kept; only stop the 53px titles from running off small phones */
 @media (max-width:575px){ .our-team .title { font-size:clamp(28px,10.5vw,53px) !important; } }
+
+/* catering box under We Cater & Deliver (phone): smaller + room below so it never touches the next heading */
+.catering-banner.cb-phone .banner-food-left img { width:250px; max-width:68vw; }
+.catering-banner.cb-phone { margin-bottom:64px; }
 
 </style>
 </body>
